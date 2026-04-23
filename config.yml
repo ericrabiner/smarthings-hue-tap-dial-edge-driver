@@ -1,0 +1,5 @@
+name: 'Hue Tap Dial'
+packageKey: 'hue-tap-dial'
+description: 'Philips Hue Tap Dial Switch (RDM002) — 4 buttons + dial events for SmartThings automations'
+permissions:
+  zigbee: {}

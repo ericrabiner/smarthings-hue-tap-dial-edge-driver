@@ -1,0 +1,46 @@
+{
+  "name": "Mirror Hue Dial to Lights",
+  "actions": [
+    {
+      "if": {
+        "changes": {
+          "operand": {
+            "device": {
+              "devices": ["YOUR_HUE_DIAL_DEVICE_ID"],
+              "component": "main",
+              "capability": "switchLevel",
+              "attribute": "level"
+            }
+          }
+        },
+        "then": [
+          {
+            "command": {
+              "devices": [
+                "YOUR_TARGET_LIGHT_DEVICE_ID_1",
+                "YOUR_TARGET_LIGHT_DEVICE_ID_2"
+              ],
+              "commands": [
+                {
+                  "component": "main",
+                  "capability": "switchLevel",
+                  "command": "setLevel",
+                  "arguments": [
+                    {
+                      "device": {
+                        "devices": ["YOUR_HUE_DIAL_DEVICE_ID"],
+                        "component": "main",
+                        "capability": "switchLevel",
+                        "attribute": "level"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
